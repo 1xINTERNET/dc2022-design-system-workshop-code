@@ -13,3 +13,11 @@
 .image-text ::slotted(h5) {
   @apply font-normal text-black;
 }
+
+:host([image-align="right"]) .image-text__media {
+  @apply order-last;
+}
+
+.image-text__media {
+  @apply order-last md:order-first;
+}

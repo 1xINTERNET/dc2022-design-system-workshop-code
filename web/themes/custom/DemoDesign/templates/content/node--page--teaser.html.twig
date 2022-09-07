@@ -3,6 +3,7 @@
     'label': label|render,
     'has-action': url is not null ? true : false,
     'has-more': true,
+    'class': 'bg-brand text-white'
   })
 %}
 
@@ -11,9 +12,11 @@
   <div slot="media">
     {{ content.field_preview_image|field_value }}
   </div>
-  {{ content.field_preview_text|field_value }}
-  <a slot="action" href="#">
-    Example action
-  </a>
+  <span class="text-3xl">
+    {{ content.field_preview_text|field_value }}
+  </span>
+  <dc-button secondary not-rounded onclick="window.open('{{ url }}');" slot="action">
+    ＋
+  </dc-button>
 
 </dc-card>

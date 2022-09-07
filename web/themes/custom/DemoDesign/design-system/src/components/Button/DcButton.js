@@ -11,7 +11,8 @@ export class Button extends Component {
       disabled: { type: Boolean },
       onClick: { type: Function },
       outline: { type: Boolean },
-      slotDefault: { type: String }
+      slotDefault: { type: String },
+      link: { type: String }
     }
   }
 
@@ -27,6 +28,8 @@ export class Button extends Component {
   handleClick (event) {
     if (this.disabled) {
       event.stopImmediatePropagation()
+    } else if (this.link) {
+      window.location.href = this.link
     } else if (typeof this.onClick === 'function') {
       this.onClick()
     }

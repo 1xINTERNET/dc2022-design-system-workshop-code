@@ -10,22 +10,32 @@
   })
 %}
 
-<div class="container py-5">
-    <dc-image-text {{ image_text_attributes }}>
-      <div slot="media">{{ content.field_image|field_value }}</div>
+<div class="container py-5 mb-6">
+  <dc-image-text {{ image_text_attributes }}>
+    <div slot="media">
+      {{ content.field_image|field_value }}
+    </div>
 
-      {% if content.field_pretitle|field_value is not empty %}
-        <div class="text-secondary uppercase mb-5">{{ content.field_pretitle|field_value }}</div>
-      {% endif %}
+    {% if content.field_pretitle|field_value is not empty %}
+      <div class="text-secondary uppercase mb-5">
+        {{ content.field_pretitle|field_value }}
+      </div>
+    {% endif %}
 
-      {% if content.field_title|field_value is not empty %}
-        <dc-headline level="h2">{{ content.field_title|field_value }}</dc-headline>
-      {% endif %}
+    {% if content.field_title|field_value is not empty %}
+      <dc-headline level="h2">
+        {{ content.field_title|field_value }}
+      </dc-headline>
+    {% endif %}
 
-      <div class="text-default mt-5 mb-10">{{ content.field_text|field_value }}</div>
+    <div class="text-default mt-5 mb-10">
+      {{ content.field_text|field_value }}
+    </div>
 
-      {% if content.field_link|field_value is not empty %}
-        <dc-button rounded onClick="window.open('{{ content.field_link.0['#url'] }}');">{{ content.field_link.0['#title'] }}</dc-button>
-      {% endif %}
-    </dc-image-text>
+    {% if content.field_link|field_value is not empty %}
+      <dc-button rounded onclick="window.open('{{ content.field_link.0['#url'] }}');">
+        {{ content.field_link.0['#title'] }}
+      </dc-button>
+    {% endif %}
+  </dc-image-text>
 </div>

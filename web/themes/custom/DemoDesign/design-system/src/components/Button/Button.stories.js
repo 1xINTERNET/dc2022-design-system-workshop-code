@@ -9,10 +9,12 @@ import './DcButton'
 const Template = ({
   disabled,
   outline,
+  slotDefault,
   secondary,
-  slotDefault
+  notRounded
 }) => html`
-  <dc-button ?disabled=${ifDefined(disabled)} ?secondary=${ifDefined(secondary)} ?outline=${ifDefined(outline)}>
+  <dc-button ?disabled=${ifDefined(disabled)} ?outline=${ifDefined(outline)} ?secondary=${ifDefined(secondary)}
+    ?not-rounded=${ifDefined(notRounded)}>
     ${slotDefault ? unsafeHTML(sanitizeHTML(slotDefault)) : nothing}
   </dc-button>
 `
@@ -22,16 +24,23 @@ Default.args = {
   slotDefault: 'Button'
 }
 
+export const Outline = Template.bind({})
+Outline.args = {
+  slotDefault: 'Button',
+  outline: true
+}
+
 export const Secondary = Template.bind({})
 Secondary.args = {
   slotDefault: 'Button',
   secondary: true
 }
 
-export const Outline = Template.bind({})
-Outline.args = {
-  slotDefault: 'Button',
-  outline: true
+export const NotRounded = Template.bind({})
+NotRounded.args = {
+  slotDefault: '+',
+  secondary: true,
+  notRounded: true
 }
 
 const DisabledTemplate = () => html`

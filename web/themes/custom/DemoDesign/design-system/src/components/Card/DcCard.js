@@ -9,7 +9,9 @@ function titleTemplate (title) {
 
 function actionTemplate (hasAction) {
   return hasAction
-    ? html`<div class="card__action"><slot name="action"></slot></div>`
+    ? html`<div class="card__action">
+  <slot name="action"></slot>
+</div>`
     : ''
 }
 
@@ -55,12 +57,16 @@ export class Card extends Component {
 
       default:
         innerTemplate = html`
-          <div class="card__media"><slot name="media"></slot></div>
           <div class="card__content" part="card__content">
-            ${titleTemplate(label)}
             <slot></slot>
-            ${actionTemplate(hasAction)}
           </div>
+          <div class="card__media">
+            <div class="card__wrapper">
+              <slot name="media"></slot>
+            </div>
+          </div>
+          ${titleTemplate(label)}
+          ${actionTemplate(hasAction)}
         `
         break
     }

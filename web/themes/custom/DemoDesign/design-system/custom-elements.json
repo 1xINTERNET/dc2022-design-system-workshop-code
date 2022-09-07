@@ -23,6 +23,10 @@
         {
           "name": "slotDefault",
           "type": "string"
+        },
+        {
+          "name": "link",
+          "type": "string"
         }
       ],
       "properties": [
@@ -48,6 +52,11 @@
         {
           "name": "slotDefault",
           "attribute": "slotDefault",
+          "type": "string"
+        },
+        {
+          "name": "link",
+          "attribute": "link",
           "type": "string"
         }
       ]

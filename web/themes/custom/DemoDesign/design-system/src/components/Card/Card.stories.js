@@ -8,10 +8,20 @@ import './DcCard'
 
 import demoCardImage from '../../assets/images/demo/demo.png'
 
-const demoImage = `<article slot="media"><img src=${demoCardImage}></article>`
+const demoImage = `
+<div slot="media">
+  <article class="contextual-region media media--type-image media--view-mode-default">
+    <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+      <div class="field__item">
+        <img loading="lazy" style="border-radius: 9999px" src=${demoCardImage} alt="Beach" typeof="foaf:Image">
+      </div>
+    </div>
+  </article>
+</div>`
 
-const Template = ({ variant, label, slotMedia, slotDefault, slotAction, hasAction }) => html`
-  <dc-card variant=${ifDefined(variant)} label=${ifDefined(label)} ?has-action=${ifDefined(hasAction)}>
+const Template = ({ variant, label, slotMedia, slotDefault, slotAction, hasAction, highlight }) => html`
+  <dc-card highlight=${ifDefined(highlight)} variant=${ifDefined(variant)} label=${ifDefined(label)}
+    ?has-action=${ifDefined(hasAction)}>
     ${slotMedia ? unsafeHTML(sanitizeHTML(slotMedia)) : nothing}
     ${slotDefault ? unsafeHTML(sanitizeHTML(slotDefault)) : nothing}
     ${slotAction && hasAction ? unsafeHTML(sanitizeHTML(slotAction)) : nothing}
@@ -23,8 +33,23 @@ Default.args = {
   slotMedia: demoImage,
   label: 'H4 - Heading 4',
   hasAction: true,
-  slotDefault: '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>',
-  slotAction: '<a slot="action" href="#">Example action</a>'
+  slotDefault: '<p>SOME TEXT</p>',
+  slotAction: '<dc-button secondary not-rounded slot="action" href="#">＋</dc-button>'
+}
+
+export const Compact = Template.bind({})
+Compact.args = {
+  variant: 'compact',
+  slotDefault: '<span>September</span>',
+  label: '20-23'
+}
+
+export const CompactHighlight = Template.bind({})
+CompactHighlight.args = {
+  variant: 'compact',
+  slotDefault: '<span>September</span>',
+  label: '20-23',
+  highlight: true
 }
 
 export default {
