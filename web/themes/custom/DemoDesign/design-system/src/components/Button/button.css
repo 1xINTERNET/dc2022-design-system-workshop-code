@@ -5,12 +5,12 @@
 
 /* Base Button */
 button {
-  @apply flex items-center bg-brand border-transparent text-white font-bold text-sm justify-center px-16 py-3 rounded-[40px] uppercase transition-all duration-200 ease-in-out hover:bg-brand/50;
+  @apply flex items-center bg-secondary border-transparent text-white font-bold text-sm justify-center px-16 py-3 rounded-[40px] uppercase transition-all duration-200 ease-in-out hover:bg-brand/50;
 }
 
 /* Outline */
 :host([outline]) button {
-  @apply bg-white text-brand border border-brand;
+  @apply bg-white text-secondary border border-secondary;
 }
 
 :host([secondary]) button {
@@ -29,5 +29,5 @@ button {
 }
 
 :host([disabled]):host([outline]) button[disabled] {
-  @apply pointer-events-none border-brand bg-white text-brand opacity-40;
+  @apply pointer-events-none border-secondary bg-white text-secondary opacity-40;
 }
