@@ -5,7 +5,7 @@
 
 /* Base Button */
 button {
-  @apply flex items-center bg-secondary border-transparent text-white font-bold text-sm justify-center px-16 py-3 rounded-[40px] uppercase transition-all duration-200 ease-in-out hover:bg-brand/50;
+  @apply flex items-center bg-secondary border-transparent text-white font-bold text-sm justify-center px-16 py-3 rounded-[40px] uppercase transition-all duration-200 ease-in-out hover:bg-secondary/50;
 }
 
 /* Outline */
@@ -14,7 +14,7 @@ button {
 }
 
 :host([secondary]) button {
-  @apply bg-secondary text-white;
+  @apply bg-secondary text-white hover:!bg-secondary/80;
 }
 
 :host([not-rounded]) button {

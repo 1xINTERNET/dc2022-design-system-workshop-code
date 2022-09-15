@@ -10,20 +10,14 @@
   })
 %}
 
-<div class="container py-5 mb-6">
+<div class="container py-5 mb-10 px-3 mx-auto ">
   <dc-image-text {{ image_text_attributes }}>
     <div slot="media">
       {{ content.field_image|field_value }}
     </div>
 
-    {% if content.field_pretitle|field_value is not empty %}
-      <div class="text-secondary uppercase mb-5">
-        {{ content.field_pretitle|field_value }}
-      </div>
-    {% endif %}
-
     {% if content.field_title|field_value is not empty %}
-      <dc-headline level="h2">
+      <dc-headline pretext="{{ content.field_pretitle|field_value }}" level="h2">
         {{ content.field_title|field_value }}
       </dc-headline>
     {% endif %}

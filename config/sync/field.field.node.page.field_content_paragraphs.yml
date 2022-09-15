@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_content_paragraphs
     - node.type.page
+    - paragraphs.paragraphs_type.cards
     - paragraphs.paragraphs_type.headline
     - paragraphs.paragraphs_type.image_text
     - paragraphs.paragraphs_type.page_reference
@@ -29,19 +30,29 @@ settings:
       headline: headline
       image_text: image_text
       page_reference: page_reference
+      cards: cards
       slideshow: slideshow
       text: text
     negate: 0
     target_bundles_drag_drop:
+      cards:
+        weight: 9
+        enabled: true
       headline:
         weight: 6
         enabled: true
+      image:
+        weight: 11
+        enabled: false
       image_text:
         weight: 7
         enabled: true
       page_reference:
         weight: 8
         enabled: true
+      slide:
+        weight: 14
+        enabled: false
       slideshow:
         weight: 9
         enabled: true

@@ -5,10 +5,12 @@
 :host([align="left"]) {
   @apply text-left;
 }
-:host([align="center"]) {
+:host([align="center"]),
+:host([align="center"]) .headline-pretext {
   @apply text-center;
 }
-:host([align="right"]) {
+:host([align="right"]),
+:host([align="right"]) .headline-pretext {
   @apply text-right;
 }
 
@@ -18,7 +20,15 @@ h3,
 h4,
 h5,
 h6 {
-  @apply text-black font-medium;
+  @apply text-brand font-medium;
+}
+:host([light]) h1,
+:host([light]) h2,
+:host([light]) h3,
+:host([light]) h4,
+:host([light]) h5,
+:host([light]) h6 {
+  @apply text-white;
 }
 
 h1 {
@@ -43,4 +53,8 @@ h5 {
 
 h6 {
   @apply text-sm;
+}
+
+.headline-pretext {
+  @apply font-medium uppercase text-secondary mb-5;
 }

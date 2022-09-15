@@ -5,8 +5,8 @@
   })
 %}
 
-<div class="container py-5 mb-6">
-  <dc-headline level="{{ headline_attributes.level }}" align="{{ headline_attributes.align }}">
-    {{ content|render|striptags }}
+<div class="container py-5 mb-10 px-3 mx-auto ">
+  <dc-headline pretext="{{ content.field_preheadline|field_value }}" level="{{ headline_attributes.level }}" align="{{ headline_attributes.align }}">
+    {{ content.field_text|render|striptags }}
   </dc-headline>
 </div>

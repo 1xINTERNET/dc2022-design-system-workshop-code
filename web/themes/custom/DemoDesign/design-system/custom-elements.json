@@ -105,12 +105,21 @@
         {
           "name": "level",
           "type": "string"
+        },
+        {
+          "name": "pretext",
+          "type": "string"
         }
       ],
       "properties": [
         {
           "name": "level",
           "attribute": "level",
+          "type": "string"
+        },
+        {
+          "name": "pretext",
+          "attribute": "pretext",
           "type": "string"
         }
       ]

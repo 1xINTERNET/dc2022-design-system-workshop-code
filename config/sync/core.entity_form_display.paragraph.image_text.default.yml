@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.image_text.field_image
+    - field.field.paragraph.image_text.field_link
+    - field.field.paragraph.image_text.field_pretitle
     - field.field.paragraph.image_text.field_text
+    - field.field.paragraph.image_text.field_title
     - field.field.paragraph.image_text.field_view_mode
     - paragraphs.paragraphs_type.image_text
   module:
+    - link
     - media_library
     - media_library_edit
     - text
@@ -18,24 +22,48 @@ mode: default
 content:
   field_image:
     type: media_library_widget
-    weight: 1
+    weight: 3
     region: content
     settings:
       media_types: {  }
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+  field_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_pretitle:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_text:
     type: text_textarea
-    weight: 0
+    weight: 2
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_view_mode:
     type: options_select
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

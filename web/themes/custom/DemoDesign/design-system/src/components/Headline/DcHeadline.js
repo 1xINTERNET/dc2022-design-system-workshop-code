@@ -1,14 +1,15 @@
-import { html, css, unsafeCSS } from 'lit-element'
-import { unsafeHTML } from 'lit-html/directives/unsafe-html'
+import { html, css, unsafeCSS } from 'lit-element';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
-import { Component } from '../Component'
+import { Component } from '../Component';
 
-import cssFile from './headline.css'
+import cssFile from './headline.css';
 
 export class Headline extends Component {
   static get properties () {
     return {
-      level: { type: String, default: 'h1' }
+      level: { type: String, default: 'h1' },
+      pretext: { type: String, default: '' }
     }
   }
 
@@ -22,9 +23,7 @@ export class Headline extends Component {
   }
 
   render () {
-    const {
-      level
-    } = this
+    const { level } = this
 
     const heading = `
       <${level}>
@@ -34,6 +33,7 @@ export class Headline extends Component {
 
     return html`
       ${Component.baseStyles}
+      <div class="headline-pretext">${this.pretext}</div>
       <div class="headline-container">
         ${unsafeHTML(heading)}
       </div>

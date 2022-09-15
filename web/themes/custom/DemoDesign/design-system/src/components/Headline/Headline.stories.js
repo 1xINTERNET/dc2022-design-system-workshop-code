@@ -1,17 +1,17 @@
-import { html, nothing } from 'lit-html'
-import { ifDefined } from 'lit-html/directives/if-defined'
-import { unsafeHTML } from 'lit-html/directives/unsafe-html'
+import { html, nothing } from 'lit-html';
+import { ifDefined } from 'lit-html/directives/if-defined';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html';
 
-import { sanitizeHTML } from '../../utils'
+import { sanitizeHTML } from '../../utils';
 
-import './DcHeadline'
+import './DcHeadline';
 
-const Template = ({
-  slotDefault,
-  level,
-  align
-}) => html`
-  <dc-headline level=${ifDefined(level)} align=${ifDefined(align)}>
+const Template = ({ slotDefault, level, align }) => html`
+  <dc-headline
+    pretext="Pretext test"
+    level=${ifDefined(level)}
+    align=${ifDefined(align)}
+  >
     ${slotDefault ? unsafeHTML(sanitizeHTML(slotDefault)) : nothing}
   </dc-headline>
 `

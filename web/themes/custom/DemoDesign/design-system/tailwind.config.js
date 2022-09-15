@@ -7,7 +7,10 @@ module.exports = {
       colors: {
         brand: '#23529F',
         secondary: '#E22B4B',
-        white: '#FFFFFF'
+        white: '#FFFFFF',
+        background: '#f3f3f0',
+        card: '#E4EAEB',
+        'brand-dark': '#213970'
       }
     },
     fontFamily: {

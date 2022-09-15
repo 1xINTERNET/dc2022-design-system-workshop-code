@@ -21,3 +21,7 @@
 .image-text__media {
   @apply order-last md:order-first;
 }
+
+.image-text__content {
+  @apply flex flex-col justify-center;
+}

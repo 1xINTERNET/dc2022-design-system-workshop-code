@@ -1,13 +1,13 @@
 :host {
-  @apply block max-w-sm h-full;
+  @apply block w-full h-full;
 }
 
 .card {
-  @apply p-5 relative w-full h-full flex flex-col bg-brand text-white gap-4;
+  @apply p-10 relative w-full h-full flex flex-col bg-brand text-white gap-4;
 }
 
 .card__content {
-  @apply flex flex-col;
+  @apply flex flex-col h-16;
 }
 
 .card__action {
@@ -19,7 +19,7 @@
 }
 
 .card__title {
-  @apply w-10/12;
+  @apply w-10/12 mt-2 h-16 flex flex-col justify-end;
 }
 
 .card__wrapper {
@@ -48,7 +48,7 @@
 /* compact variant */
 
 :host([variant="compact"]) .card {
-  @apply py-20 bg-gray-300 text-black;
+  @apply py-20 bg-card text-black;
 }
 
 :host([variant="compact"][highlight]) .card {
@@ -56,9 +56,9 @@
 }
 
 :host([variant="compact"]) .card__content {
-  @apply text-center;
+  @apply text-center h-auto;
 }
 
 :host([variant="compact"]) .card__title {
-  @apply mb-4 text-6xl w-full;
+  @apply mb-4 text-6xl w-full h-auto;
 }
