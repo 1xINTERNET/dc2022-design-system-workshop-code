@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply text-brand font-medium;
+  @apply text-brand-text font-semibold;
 }
 :host([light]) h1,
 :host([light]) h2,

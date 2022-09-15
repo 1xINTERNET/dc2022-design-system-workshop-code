@@ -10,11 +10,12 @@ module.exports = {
         white: '#FFFFFF',
         background: '#f3f3f0',
         card: '#E4EAEB',
-        'brand-dark': '#213970'
+        'brand-dark': '#213970',
+        'brand-text': '#09547A'
       }
     },
     fontFamily: {
-      sans: ['geomanist', ...defaultTheme.fontFamily.sans]
+      sans: ['Montserrat', ...defaultTheme.fontFamily.sans]
     }
   },
   plugins: []
