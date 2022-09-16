@@ -5,9 +5,9 @@
 4. To login into the site run `ddev drush uli`
 
 # Install
-1. In ../web/themes/custom/DemoDesign/ `npm install`
-2. In ../web/themes/custom/DemoDesign/design-system `npm use`
-3. In ../web/themes/custom/DemoDesign/design-system `npm install`
+1. In ../web/themes/custom/DemoDesign/design-system `nvm use`
+2. In ../web/themes/custom/DemoDesign/design-system `npm install`
+3. In ../web/themes/custom/DemoDesign/ `npm install`
 
 # Storybook
 1. In ../web/themes/custom/DemoDesign/design-system `npm start`
